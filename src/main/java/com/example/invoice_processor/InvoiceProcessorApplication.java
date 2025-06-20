@@ -10,4 +10,6 @@ public class InvoiceProcessorApplication {
 		SpringApplication.run(InvoiceProcessorApplication.class, args);
 	}
 
+
+
 }
