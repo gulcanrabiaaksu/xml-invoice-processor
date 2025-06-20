@@ -45,28 +45,3 @@ public class InvoiceController {
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("message", "Invoice saved successfully"));
     }
 }
-
-/**
- * POST /api/invoices endpoint’i JSON içinden "base64xml" alanını alır.
-
-XmlUtil kullanarak XML parse edilir.
-
-Zorunlu alanlar için validasyon yapılır.
-
-Hatalı veri gelirse 400 Bad Request döner.
-
-Başarılı olursa 201 Created ve mesaj döner.
-
-Beklenmedik hatalarda 500 Internal Server Error döner.
-*****
-try-catch kaldırıldı, exception handler devrede.
-
-Validasyon hatalarında IllegalArgumentException fırlatılıyor.
-
-XML parse hatası JAXBException fırlatılıyor ve global handler yakalıyor.
-
-Base64 boşsa direkt 400 Bad Request döner.
-
-
-
- */

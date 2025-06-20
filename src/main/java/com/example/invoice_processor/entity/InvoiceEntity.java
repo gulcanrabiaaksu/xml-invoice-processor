@@ -25,8 +25,6 @@ public class InvoiceEntity {
     @Column(name = "currency", nullable = false)
     private String currency;
 
-    // Getter ve Setter'lar
-
     public String getInvoiceNumber() {
         return invoiceNumber;
     }

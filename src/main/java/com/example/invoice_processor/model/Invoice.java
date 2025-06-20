@@ -32,8 +32,6 @@ public class Invoice {
     public Invoice() {
     }
 
-    // getter - setter
-
     public String getInvoiceNumber() {
         return invoiceNumber;
     }

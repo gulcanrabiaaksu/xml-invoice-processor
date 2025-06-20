@@ -23,7 +23,7 @@ public class InvoiceService {
     }
 
     public void saveInvoice(Invoice invoice) {
-        // Validasyonlar burada da yapılabilir (isteğe bağlı)
+        
 
         // CustomerEntity oluştur veya var olanı bul
         CustomerEntity customerEntity = customerRepository.findById(invoice.getCustomer().getTaxNumber())
@@ -49,12 +49,3 @@ public class InvoiceService {
         invoiceRepository.save(invoiceEntity);
     }
 }
-/**saveInvoice metodu, model Invoice objesini entity'lere çevirip kaydediyor.
-
-Müşteri var mı diye kontrol ediyor, yoksa yeni müşteri yaratıyor.
-
-Sonra invoice entity oluşturup kaydediyor.
-
-Burada validasyonları istersen controller veya service’de yapabilirsin.
-
- */

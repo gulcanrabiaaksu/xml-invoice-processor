@@ -16,8 +16,6 @@ public class CustomerEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-    // Getter ve Setter'lar
-
     public String getTaxNumber() {
         return taxNumber;
     }
@@ -34,11 +32,3 @@ public class CustomerEntity {
         this.name = name;
     }
 }
-/*
-CustomerEntity için taxNumber alanını @Id olarak belirledim, çünkü fatura örneğinde bu alan benzersiz ve anlamlı.
-
-InvoiceEntity'de invoiceNumber birincil anahtar (PK).
-
-InvoiceEntity ile CustomerEntity arasında @ManyToOne ilişkisi var; bir müşteri birçok faturaya sahip olabilir.
-
-Entity’leri com.example.invoiceprocessor.entity paketinde tutmak düzen açısından iyi olur.*/ 
