@@ -30,18 +30,17 @@ Bu proje, Base64 formatında gönderilen XML faturaları Spring Boot ile işleyi
     cd xml-invoice-processor
     ```
 
-2. Uygulamayı başlat:
+2. Projeyi derle:
+    ```bash
+    mvn clean install
+    ```
 
-    - Linux/Mac:
-      ```bash
-      ./mvnw spring-boot:run
-      ```
-    - Windows:
-      ```bash
-      mvnw.cmd spring-boot:run
-      ```
+3. Uygulamayı başlat:
+    ```bash
+    mvn spring-boot:run
+    ```
 
-3. Testleri çalıştırmak için:
+4. Testleri çalıştırmak için:
     ```bash
     ./mvnw clean test
     ```
