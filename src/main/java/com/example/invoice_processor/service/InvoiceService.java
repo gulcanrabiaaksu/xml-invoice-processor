@@ -21,7 +21,6 @@ public class InvoiceService {
     }
 
     public void saveInvoice(Invoice invoice) {
-        
         CustomerEntity customerEntity = customerRepository.findById(invoice.getCustomer().getTaxNumber())
                 .orElseGet(() -> {
                     CustomerEntity newCustomer = new CustomerEntity();
@@ -30,6 +29,7 @@ public class InvoiceService {
                     return newCustomer;
                 });
 
+        // Customer'ı veritabanına kaydet (eğer yeni ise)
         customerRepository.save(customerEntity);
 
         InvoiceEntity invoiceEntity = new InvoiceEntity();
@@ -39,10 +39,11 @@ public class InvoiceService {
         invoiceEntity.setTotalAmount(invoice.getTotalAmount());
         invoiceEntity.setCurrency(invoice.getCurrency());
 
+        // Faturayı kaydet
         invoiceRepository.save(invoiceEntity);
     }
 
-     public List<InvoiceEntity> getAllInvoices() {
+    public List<InvoiceEntity> getAllInvoices() {
         return invoiceRepository.findAll();
     }
 }

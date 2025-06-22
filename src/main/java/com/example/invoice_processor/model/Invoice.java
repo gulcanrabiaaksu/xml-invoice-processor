@@ -9,12 +9,13 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @XmlRootElement(name = "Invoice")
+
 @XmlAccessorType(XmlAccessType.FIELD) 
 public class Invoice {
 
     @XmlElement(name = "InvoiceNumber")
     private String invoiceNumber;
-    
+
     @XmlElement(name = "IssueDate")
     private String issueDateString;
 
@@ -70,6 +71,4 @@ public class Invoice {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
-
-    
 }
