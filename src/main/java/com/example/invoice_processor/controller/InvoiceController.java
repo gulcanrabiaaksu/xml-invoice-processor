@@ -39,7 +39,6 @@ public class InvoiceController {
 
         Invoice invoice = XmlUtil.parseInvoiceFromBase64(base64xml);
 
-        // Validasyonlar
         if (invoice.getInvoiceNumber() == null || invoice.getInvoiceNumber().trim().isEmpty()) {
             throw new IllegalArgumentException("InvoiceNumber cannot be empty");
         }

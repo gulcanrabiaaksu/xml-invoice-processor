@@ -48,6 +48,14 @@ public class Invoice {
         this.issueDateString = issueDateString;
     }
 
+    public void setIssueDate(LocalDate issueDate) {
+        if (issueDate == null) {
+            this.issueDateString = null;
+        } else {
+            this.issueDateString = issueDate.toString();
+        }
+    }
+
     public Customer getCustomer() {
         return customer;
     }
