@@ -5,6 +5,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
+/**
+ * Müşteri (Customer) verilerini temsil eden JPA Entity sınıfıdır.
+ * Bu sınıf veritabanındaki "customers" tablosu ile eşleştirilmiştir.
+ */
+
 @Entity
 @Table(name = "customers")
 public class CustomerEntity {

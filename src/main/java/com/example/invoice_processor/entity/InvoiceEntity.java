@@ -4,6 +4,11 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * Fatura (Invoice) verilerini temsil eden JPA Entity sınıfıdır.
+ * Bu sınıf veritabanındaki "invoices" tablosu ile eşleştirilmiştir.
+ */
+
 @Entity
 @Table(name = "invoices")
 public class InvoiceEntity {

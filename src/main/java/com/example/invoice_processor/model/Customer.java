@@ -4,6 +4,7 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 
+//XML'den alınan müşteri bilgilerini temsil eden model sınıfıdır.
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Customer {
 

@@ -15,12 +15,14 @@ public class InvoiceService {
     private final InvoiceRepository invoiceRepository;
     private final CustomerRepository customerRepository;
 
+    // Repository'ler constructor injection ile enjekte ediliyor.
     public InvoiceService(InvoiceRepository invoiceRepository, CustomerRepository customerRepository) {
         this.invoiceRepository = invoiceRepository;
         this.customerRepository = customerRepository;
     }
 
     public void saveInvoice(Invoice invoice) {
+        // Mevcut müşteri kontrol ediliyor, yoksa yeni oluşturuluyor.
         CustomerEntity customerEntity = customerRepository.findById(invoice.getCustomer().getTaxNumber())
                 .orElseGet(() -> {
                     CustomerEntity newCustomer = new CustomerEntity();
@@ -30,7 +32,8 @@ public class InvoiceService {
                 });
 
         customerRepository.save(customerEntity);
-
+        
+        // Fatura bilgileri Entity’ye dönüştürülüp veritabanına kaydediliyor.
         InvoiceEntity invoiceEntity = new InvoiceEntity();
         invoiceEntity.setInvoiceNumber(invoice.getInvoiceNumber());
         invoiceEntity.setIssueDate(invoice.getIssueDate());

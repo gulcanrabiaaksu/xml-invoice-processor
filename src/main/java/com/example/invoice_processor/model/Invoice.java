@@ -8,6 +8,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+//XML formatında alınan faturaları temsil eden model sınıfıdır.
 @XmlRootElement(name = "Invoice")
 
 @XmlAccessorType(XmlAccessType.FIELD) 

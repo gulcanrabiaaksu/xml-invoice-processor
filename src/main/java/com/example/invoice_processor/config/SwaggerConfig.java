@@ -5,6 +5,11 @@ import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Swagger/OpenAPI konfigürasyon sınıfı.
+ * Uygulamanın API dokümantasyonunu otomatik olarak oluşturmak için kullanılır.
+ */
+
 @Configuration
 public class SwaggerConfig {
 

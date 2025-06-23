@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class InvoiceProcessorApplicationTests {
 
+    //Spring uygulama kontekstinin başarılı şekilde yüklenip yüklenmediğini kontrol eder.
 	@Test
 	void contextLoads() {
 	}
