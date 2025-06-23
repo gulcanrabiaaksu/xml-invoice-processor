@@ -10,6 +10,7 @@ Bu proje, Base64 formatında gönderilen XML faturaları Spring Boot ile işleyi
 - Validasyon (invoiceNumber, customer.name boş olamaz, totalAmount > 0)
 - H2 veritabanına kayıt (Spring Data JPA)
 - Swagger UI ile API dokümantasyonu
+- Detaylı loglama (istekler, hatalar, uyarılar)  
 - Basit unit testler
 
 ## Teknolojiler
@@ -21,6 +22,7 @@ Bu proje, Base64 formatında gönderilen XML faturaları Spring Boot ile işleyi
 - H2 Database
 - JAXB
 - Swagger (Springdoc OpenAPI)
+- SLF4J Logger 
 
 ## Çalıştırma
 
@@ -44,6 +46,14 @@ Bu proje, Base64 formatında gönderilen XML faturaları Spring Boot ile işleyi
     ```bash
     ./mvnw clean test
     ```
+## Loglama
+
+Uygulama artık fatura işleme adımlarını ve hataları takip etmek için detaylı loglama içermektedir:
+
+- Gelen fatura istekleri ve Base64 XML içerikleri debug seviyesinde loglanır.
+- `base64xml`, `invoiceNumber` veya `customer name` gibi zorunlu alanlar eksik ya da geçersiz olduğunda uyarı (warning) logları oluşturulur.
+- XML parsing hataları (JAXBException) ve geçersiz veri hataları (IllegalArgumentException) yakalanıp loglanır.
+- Bu loglama, hata ayıklamayı kolaylaştırır ve API’nin sağlığını ve kullanımını izlemeye yardımcı olur.
 
 ## API Dokümantasyonu
 
